@@ -34,7 +34,8 @@ class HomeView: UIViewController {
         addButtons()
         homeViewConstraints()
     }
-    
+    // we are creating a closure of the logo
+    // this will automatically all itself and initilize itself
     let logo : UIImageView = {
         let image = UIImageView(image: UIImage(named: "StudyPalLogo"))
         image.translatesAutoresizingMaskIntoConstraints = false

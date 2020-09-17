@@ -11,12 +11,12 @@ import UIKit
 // <This View Controller will pop up once the user clicks the register button>
 class RegisterScreen: UIViewController, UIScrollViewDelegate {
     
-    /**
+    /*
      Initilization of a scroll view
      > Main purpose of this scroll view is to enable the app in landscape mode
      */
     let scroll = UIScrollView()
-    /**
+    /*
      Initilization of a Vertical Stack View
      > When we have a Scroll view it is better to use a stack view inside it
      */
@@ -25,7 +25,7 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate {
     //********************************
     //********** Text Fields *********
     //********************************
-    /**
+    /*
     Since these textfields are going to be identical when it comes to their dsign
      I created a function that takes a textfield as UITextField, a placehorlder as a String and fieldWidth as a CGFloat
      we pass each one of these text fields to that function and implement their design
@@ -42,7 +42,7 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate {
     //********************************
     //************ Buttons ***********
     //********************************
-    /**
+    /*
      Lookwise these buttons are going to be nearly identical
      I created a function that implements their design similar to what I did with text fields
      */
@@ -51,13 +51,14 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate {
     let submit = UIButton()
     
 
-    /**
+    /*
      Here's what goes down when the view loads
-     > we call the textfield delegate function to enable more functionality with our textfields
-     > we implement the design of each of our textfields by calling texfieldConfiguration function
-     > Similarly we are calling buttonConfiguration function to implement the design of outr buttons
-     > Scroll and Stack View configuration functions are called for their design
-     > And addconstraints function is called to place the objects in our app
+     ScrollViewConfiguration -> Setting up the scrollView and attatching it to the screen
+     StackViewConfiguration -> Setting up the stackView and attaching to the screen
+        Stack view is inside the scroll View we will use it to place our objects
+     AddTextFields() -> Initilizes the textfields that are going to be used
+     AddButtons -> creates the buttons
+     AddCosntraints -> Inserts the objects to the stackview so that the user can see them
      */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,7 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate {
 // we are configuring the views we have implemented at the top
 extension RegisterScreen {
     func scrollViewConfguration () {
+        // allowing to customize the constraints
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.bounces = true
         scroll.delegate = self
@@ -112,7 +114,7 @@ extension RegisterScreen {
     
     
 // *************** TEXT FIELD EXTENSION ************
-/**
+/*
      > I am using extensions to make the code easier to navigate and to read
      > They provide simplicity
      > In this extension we are focusing on Textfields
@@ -183,7 +185,7 @@ extension RegisterScreen: UITextFieldDelegate {
 }
     
 // *********** BUTTON EXTENSION **************
-/**
+/*
      > Here's the button version of previous extension
      > We are going to configure and et the action function of our buttons
 */
@@ -254,7 +256,9 @@ extension RegisterScreen {
             },
             completion: { Void in()  }
         )
-        
+        /**
+         this portion is poorly coded and will be worked on later
+         */
         if let title = sender.currentTitle {
             switch title {
             case "Submit":
@@ -284,10 +288,14 @@ extension RegisterScreen {
         let validMAjor = majorValidation()
         if passwordCheck.0 && emailCheck && validName && validUni && validMAjor {
             print("yo")
+            /*
+             if everything checks out we will call the database here
+             */
         }
     }
     // TODO: implement
     func universityClicked () {
+        // go to the university view
         navigationController?.pushViewController(UniversityScreen(), animated: true)
     }
     
@@ -321,6 +329,7 @@ extension RegisterScreen {
 // EMAIL validation
 extension RegisterScreen {
     func isValidEmail() -> Bool {
+        // we are going to be using RegEx to check for the validation
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         let check = emailPred.evaluate(with: email.text)
@@ -399,7 +408,15 @@ extension RegisterScreen {
         return true
     }
 }
-    
+
+/*
+     After university is clicked we will open up a new view.
+     inside that view there is going to be a table view and a search bar
+     the user will search for their university and when they lcick their university
+     it selects that university and goes back to the previous view
+     after it goes back to the previous view it shares data and changes the title of the button to the name of the clciked university
+     In this function we checked whether or not the user clicked to the university
+*/
 extension RegisterScreen {
     func universityValidation () -> Bool {
         if university.currentTitle?.lowercased() == "university" {
@@ -408,7 +425,7 @@ extension RegisterScreen {
         return true
     }
     
-    
+    // same thing with what we did to university but this time it's with major
     func majorValidation () -> Bool {
         if major.currentTitle?.lowercased() == "major" {
             return false
