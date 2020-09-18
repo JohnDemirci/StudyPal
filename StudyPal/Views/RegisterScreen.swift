@@ -133,11 +133,8 @@ extension RegisterScreen: UITextFieldDelegate {
     // Implementation of the texfields design
     // the function takes textfield and placeholder
     func textfieldConfiguration (txtField: UITextField, placeholder: String, secureField: Bool) {
-        
         // first letter is lowercase
         txtField.autocapitalizationType = .none
-        
-        
         // no autocorrect
         txtField.autocorrectionType = .no
         // enabling some advanced textfield functionalities
@@ -198,6 +195,13 @@ extension RegisterScreen {
         buttonConfiguration(button: university, placeholder: "University")
         buttonConfiguration(button: major, placeholder: "Major")
         buttonConfiguration(button: submit, placeholder: "Submit")
+        //after button is tapped we are going to execute the function inside the #selector
+        // the selector will recognize which button is tapped
+        // then we are going to use this information to perform actions
+        // inside that function based on which button is tapped
+        university.addTarget(self, action: #selector(universityClicked), for: .touchUpInside)
+        major.addTarget(self, action: #selector(majorClicked), for: .touchUpInside)
+        submit.addTarget(self, action: #selector(submitClicked), for: .touchUpInside)
     }
     
     
@@ -216,19 +220,11 @@ extension RegisterScreen {
         button.layer.borderWidth = 1
         // the text inside the button as the placeholder
         button.setTitle("\(placeholder)", for: .normal)
-        
         // adding a shadow to the buttons
         button.layer.shadowColor = goldColor.cgColor
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
         button.layer.shadowOpacity = 1
         button.layer.shadowRadius = 6
-        
-        
-        //after button is tapped we are going to execute the function inside the #selector
-        // the selector will recognize which button is tapped
-        // then we are going to use this information to perform actions
-        // inside that function based on which button is tapped
-        button.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
         // setting the titlecolor (placeholder)
         button.setTitleColor(appColor, for: .normal)
         // enabling our constraints
@@ -243,41 +239,13 @@ extension RegisterScreen {
             button.widthAnchor.constraint(equalToConstant: 300).isActive = true
         }
     }
-    // Function that is executed whenever a button i clicked
-    // we are passing a UIButton to recognize which button is clicked
-    @objc func buttonTapped (sender: UIButton) {
-        // testing if the function is working as intended with the statement below
-        print("\(sender.currentTitle!)")
-        // we are going to implement our own button animation
-        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: CGFloat(0.20), initialSpringVelocity: CGFloat(6.0), options: UIView.AnimationOptions.allowUserInteraction,
-            animations: {
-                sender.transform = CGAffineTransform.identity
-            },
-            completion: { Void in()  }
-        )
-        /**
-         this portion is poorly coded and will be worked on later
-         */
-        if let title = sender.currentTitle {
-            switch title {
-            case "Submit":
-                submitClicked()
-                break
-            case "University":
-                universityClicked()
-                break
-            case "Major":
-                majorClicked()
-                break
-            default:
-                print("oof")
-            }
-        }
-    }
     
     
-    func submitClicked () {
+    
+    @objc func submitClicked () {
+        
+        animateButtons(sender: submit)
+        
         // do a password check
         // do a email check
         // do stuff with the created variables later
@@ -294,14 +262,15 @@ extension RegisterScreen {
         }
     }
     // TODO: implement
-    func universityClicked () {
+    @objc func universityClicked () {
+        animateButtons(sender: university)
         // go to the university view
         navigationController?.pushViewController(UniversityScreen(), animated: true)
     }
     
     // TODO: Implement
-    func majorClicked() {
-        
+    @objc func majorClicked() {
+        animateButtons(sender: major)
     }
     
     

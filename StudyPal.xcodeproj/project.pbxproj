@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5808A09C2511D7B700851665 /* UniversityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5808A09B2511D7B700851665 /* UniversityScreen.swift */; };
 		586FC5AA2503F83B00BBE653 /* HexColorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */; };
+		5876A00525151D12000A4379 /* buttonAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876A00425151D12000A4379 /* buttonAnimations.swift */; };
 		58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD25D2503F6DC0044F201 /* AppDelegate.swift */; };
 		58CBD2602503F6DC0044F201 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD25F2503F6DC0044F201 /* SceneDelegate.swift */; };
 		58CBD2622503F6DC0044F201 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD2612503F6DC0044F201 /* HomeView.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		5808A09B2511D7B700851665 /* UniversityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityScreen.swift; sourceTree = "<group>"; };
 		586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorImplementation.swift; sourceTree = "<group>"; };
+		5876A00425151D12000A4379 /* buttonAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonAnimations.swift; sourceTree = "<group>"; };
 		58CBD25A2503F6DC0044F201 /* StudyPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CBD25D2503F6DC0044F201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58CBD25F2503F6DC0044F201 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				58CBD26E2503F6DD0044F201 /* Info.plist */,
 				58CBD2662503F6DC0044F201 /* StudyPal.xcdatamodeld */,
 				586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */,
+				5876A00425151D12000A4379 /* buttonAnimations.swift */,
 			);
 			path = StudyPal;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5876A00525151D12000A4379 /* buttonAnimations.swift in Sources */,
 				58D119FF250427B20076F998 /* RegisterScreen.swift in Sources */,
 				58CBD2622503F6DC0044F201 /* HomeView.swift in Sources */,
 				58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */,
