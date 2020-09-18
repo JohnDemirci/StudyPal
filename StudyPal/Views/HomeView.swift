@@ -27,6 +27,8 @@ class HomeView: UIViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        // appColor and goldColor are implemented in
+        // ColorImplementation.swift file
         view.backgroundColor = appColor
         scrollViewConfiguration()
         stackViewConfiguration()
