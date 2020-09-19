@@ -138,7 +138,7 @@ extension HomeView: UITextFieldDelegate {
         // we have a clear background so this may not be necessary
         // however when it comes to password entry the background may chhange to a yellow color which then it goes over the border
         textField.clipsToBounds = true
-        textField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width-150).isActive = true
+        textField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width-50).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         
