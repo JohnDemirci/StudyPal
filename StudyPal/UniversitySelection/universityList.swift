@@ -9,4 +9,13 @@
 import Foundation
 import UIKit
 
-
+let universities = ["CSU CHANNEL ISLANDS",
+                    "CSU LONG BEACH",
+                    "CSU SACRAMENTO",
+                    "CHAPMAN UNIVERSITY",
+                    "ILLINOIS STATE UNIVERSITY",
+                    "PORTLAND STATE UNIVERSITY",
+                    "USC",
+                    "UC LOS ANGELES",
+                    "UC BERKELEY",
+                    "LONG BEACH CITY COLLEGE"]

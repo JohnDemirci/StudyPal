@@ -8,8 +8,17 @@
 import UIKit
 
 
+    
+protocol UniversityDelegate {
+    func retractUni(uniName: String)
+}
+    
 // <This View Controller will pop up once the user clicks the register button>
-class RegisterScreen: UIViewController, UIScrollViewDelegate {
+class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate {
+    func retractUni(uniName: String) {
+        university.setTitle(uniName, for: .normal)
+    }
+        
     
     /*
      Initilization of a scroll view
@@ -265,7 +274,10 @@ extension RegisterScreen {
     @objc func universityClicked () {
         animateButtons(sender: university)
         // go to the university view
-        navigationController?.pushViewController(UniversityScreen(), animated: true)
+        
+        let uniScreen = UniversityScreen()
+        uniScreen.delegate = self
+        navigationController?.pushViewController(uniScreen, animated: true)
     }
     
     // TODO: Implement

@@ -16,7 +16,7 @@ class UnivversityTableViewCell: UITableViewCell {
     private let myLabel : UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.textColor = .black
+        label.textColor = goldColor
         label.text = "custom cell"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -34,7 +34,7 @@ class UnivversityTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .orange
+        contentView.backgroundColor = appColor
         contentView.addSubview(myLabel)
         myLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         myLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
