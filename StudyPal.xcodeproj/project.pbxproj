@@ -19,6 +19,9 @@
 		58CBD26A2503F6DD0044F201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CBD2692503F6DD0044F201 /* Assets.xcassets */; };
 		58CBD26D2503F6DD0044F201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CBD26B2503F6DD0044F201 /* LaunchScreen.storyboard */; };
 		58D119FF250427B20076F998 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D119FE250427B20076F998 /* RegisterScreen.swift */; };
+		58E02FC92516C8E5004C1B37 /* MajorListFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FC82516C8E5004C1B37 /* MajorListFile.swift */; };
+		58E02FCD2516CC46004C1B37 /* MajorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FCC2516CC46004C1B37 /* MajorScreen.swift */; };
+		58E02FD02516CDCD004C1B37 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FCF2516CDCD004C1B37 /* MajorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		58CBD26C2503F6DD0044F201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58CBD26E2503F6DD0044F201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58D119FE250427B20076F998 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		58E02FC82516C8E5004C1B37 /* MajorListFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorListFile.swift; sourceTree = "<group>"; };
+		58E02FCC2516CC46004C1B37 /* MajorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScreen.swift; sourceTree = "<group>"; };
+		58E02FCF2516CDCD004C1B37 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,8 @@
 		586FC5AC2503F88D00BBE653 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				58E02FC72516C8C6004C1B37 /* MajorSelection */,
+				5808A09A2511D78F00851665 /* UniversitySelection */,
 				58CBD2612503F6DC0044F201 /* HomeView.swift */,
 				58D119FE250427B20076F998 /* RegisterScreen.swift */,
 			);
@@ -96,7 +104,6 @@
 		58CBD25C2503F6DC0044F201 /* StudyPal */ = {
 			isa = PBXGroup;
 			children = (
-				5808A09A2511D78F00851665 /* UniversitySelection */,
 				586FC5AC2503F88D00BBE653 /* Views */,
 				586FC5AB2503F87600BBE653 /* Delegates */,
 				58CBD2692503F6DD0044F201 /* Assets.xcassets */,
@@ -107,6 +114,16 @@
 				5876A00425151D12000A4379 /* buttonAnimations.swift */,
 			);
 			path = StudyPal;
+			sourceTree = "<group>";
+		};
+		58E02FC72516C8C6004C1B37 /* MajorSelection */ = {
+			isa = PBXGroup;
+			children = (
+				58E02FC82516C8E5004C1B37 /* MajorListFile.swift */,
+				58E02FCC2516CC46004C1B37 /* MajorScreen.swift */,
+				58E02FCF2516CDCD004C1B37 /* MajorTableViewCell.swift */,
+			);
+			path = MajorSelection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,13 +197,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C7ADDD2515EACC00CB69D6 /* UnivversityTableViewCell.swift in Sources */,
+				58E02FC92516C8E5004C1B37 /* MajorListFile.swift in Sources */,
 				5876A00525151D12000A4379 /* buttonAnimations.swift in Sources */,
 				58D119FF250427B20076F998 /* RegisterScreen.swift in Sources */,
 				58CBD2622503F6DC0044F201 /* HomeView.swift in Sources */,
 				58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */,
+				58E02FD02516CDCD004C1B37 /* MajorTableViewCell.swift in Sources */,
 				586FC5AA2503F83B00BBE653 /* HexColorImplementation.swift in Sources */,
 				58CBD2602503F6DC0044F201 /* SceneDelegate.swift in Sources */,
 				5808A09C2511D7B700851665 /* UniversityScreen.swift in Sources */,
+				58E02FCD2516CC46004C1B37 /* MajorScreen.swift in Sources */,
 				5805B7B92515E55200C0ACDC /* universityList.swift in Sources */,
 				58CBD2682503F6DC0044F201 /* StudyPal.xcdatamodeld in Sources */,
 			);

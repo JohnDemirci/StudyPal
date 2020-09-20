@@ -13,12 +13,19 @@ protocol UniversityDelegate {
     func retractUni(uniName: String)
 }
     
+protocol MajorDelegate {
+    func retractMajor(majorName: String)
+}
+    
 // <This View Controller will pop up once the user clicks the register button>
-class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate {
+class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate, MajorDelegate {
     func retractUni(uniName: String) {
         university.setTitle(uniName, for: .normal)
     }
-        
+    
+    func retractMajor(majorName: String) {
+        major.setTitle(majorName, for: .normal)
+    }
     
     /*
      Initilization of a scroll view
@@ -283,6 +290,9 @@ extension RegisterScreen {
     // TODO: Implement
     @objc func majorClicked() {
         animateButtons(sender: major)
+        let majScreen = MajorScreen()
+        majScreen.delegate = self
+        navigationController?.pushViewController(majScreen, animated: true)
     }
     
     
