@@ -20,7 +20,7 @@ class HomeView: UIViewController {
     var buttonHStack = UIStackView()
     
     
-    /**
+    /*
      I prefer not to have a lot of logic inside my viewDidLoad method
      that is why a lot of things are divided into small pieces
      i am using extensions to make the code readable
@@ -35,6 +35,14 @@ class HomeView: UIViewController {
         addTextFields()
         addButtons()
         homeViewConstraints()
+        // TODO:
+        /*
+         CHECK IF REMEMBER ME WAS SELECTEED
+         IF IT WAS CHECK CORE DATA
+         GRAB THE DATA AND LOGIN
+         ELSE
+         DO NOTHING
+         */
     }
     // we are creating a closure of the logo
     // this will automatically all itself and initilize itself
@@ -192,18 +200,9 @@ extension HomeView {
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
         button.layer.shadowOpacity = 1
         button.layer.shadowRadius = 6
-        //after button is tapped we are going to execute the function inside the #selector
-        // the selector will recognize which button is tapped
-        // then we are going to use this information to perform actions
-        // inside that function based on which button is tapped
         button.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
-        // setting the titlecolor (placeholder)
         button.setTitleColor(appColor, for: .normal)
-        // enabling our constraints
         button.translatesAutoresizingMaskIntoConstraints = false
-        // I wanted the submit button to have a different width so we are checking that
-        // if the placeholder we passed is Submit
-        // if it is we give it a special width
         button.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
     }
@@ -213,19 +212,17 @@ extension HomeView {
         // testing if the function is working as intended with the statement below
         print("\(sender.currentTitle!)")
         // we are going to implement our own button animation
-        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 2.0, delay: 0, usingSpringWithDamping: CGFloat(0.20), initialSpringVelocity: CGFloat(6.0), options: UIView.AnimationOptions.allowUserInteraction,
-            animations: {
-                sender.transform = CGAffineTransform.identity
-            },
-            completion: { Void in()  }
-        )
+        animateButtons(sender: sender)
         // we will call different functions based on which button is clicked
         // i wanted all buttons to share the same animation so this is more like an
         // animation function
         // now i write a switch statement and call functions based on which button is pressed
         // i am sure this is a pretty bad way to do this i might change it later
         // we are unwrapping optional value here since it could be niil
+        
+        /*
+         TODO: CODE BELOW IS BAD PLS OPTIMIZE IT
+         */
         if let title = sender.currentTitle {
             switch title {
                 // if the remember me button is tapped we toggle the selected value
@@ -235,6 +232,7 @@ extension HomeView {
                 break
             case "Remember Me ✅":
                 rememberMeButton.setTitle("Remember Me ❌", for: .normal)
+                // TODO: USE CORE DATA TO REMEMBER THE USER
                 break
             case "Register":
                 RegisterTapped()

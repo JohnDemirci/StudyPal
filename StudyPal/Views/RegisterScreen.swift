@@ -1,4 +1,4 @@
-    //
+//
 //  RegisterScreen.swift
 //  StudyPal
 //  Created by John Demirci on 9/5/20.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-
-    
+// this protocol is going to be used to share data from the child view to the parent view
 protocol UniversityDelegate {
     func retractUni(uniName: String)
 }
     
+// this protocol is going to be used to share data from the child view to the parent view
 protocol MajorDelegate {
     func retractMajor(majorName: String)
 }
@@ -55,9 +55,9 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
     var selectedMajor: String?
     
     
-    //********************************
-    //************ Buttons ***********
-    //********************************
+    //***********************************
+    //************ Buttons **************
+    //***********************************
     /*
      Lookwise these buttons are going to be nearly identical
      I created a function that implements their design similar to what I did with text fields
@@ -185,8 +185,6 @@ extension RegisterScreen: UITextFieldDelegate {
         // changing the placeholder color to goldColor
         txtField.attributedPlaceholder = NSAttributedString(string: "\(placeholder)", attributes: [NSAttributedString.Key.foregroundColor: goldColor])
     }
-    
-
     // this is a predefined function by uikit
     // after the user hits return I want to dismiss the keyboard
     // this function does that exactly
@@ -207,14 +205,16 @@ extension RegisterScreen {
     // all buttons are going to be nearly identical
     // they will have some minor differences
     // i tell those differences by passing them in the patameter
+    
+    //after button is tapped we are going to execute the function inside the #selector
+    // the selector will recognize which button is tapped
+    // then we are going to use this information to perform actions
+    // inside that function based on which button is tapped
     func addButtons () {
         buttonConfiguration(button: university, placeholder: "University")
         buttonConfiguration(button: major, placeholder: "Major")
         buttonConfiguration(button: submit, placeholder: "Submit")
-        //after button is tapped we are going to execute the function inside the #selector
-        // the selector will recognize which button is tapped
-        // then we are going to use this information to perform actions
-        // inside that function based on which button is tapped
+
         university.addTarget(self, action: #selector(universityClicked), for: .touchUpInside)
         major.addTarget(self, action: #selector(majorClicked), for: .touchUpInside)
         submit.addTarget(self, action: #selector(submitClicked), for: .touchUpInside)
@@ -259,9 +259,7 @@ extension RegisterScreen {
     
     
     @objc func submitClicked () {
-        
         animateButtons(sender: submit)
-        
         // do a password check
         // do a email check
         // do stuff with the created variables later
@@ -294,8 +292,6 @@ extension RegisterScreen {
         majScreen.delegate = self
         navigationController?.pushViewController(majScreen, animated: true)
     }
-    
-    
 }
 
     
@@ -415,7 +411,6 @@ extension RegisterScreen {
         }
         return true
     }
-    
     // same thing with what we did to university but this time it's with major
     func majorValidation () -> Bool {
         if major.currentTitle?.lowercased() == "major" {
