@@ -149,38 +149,26 @@ extension RegisterScreen: UITextFieldDelegate {
     // Implementation of the texfields design
     // the function takes textfield and placeholder
     func textfieldConfiguration (txtField: UITextField, placeholder: String, secureField: Bool) {
-        // first letter is lowercase
         txtField.autocapitalizationType = .none
-        // no autocorrect
         txtField.autocorrectionType = .no
-        // enabling some advanced textfield functionalities
         txtField.delegate = self
-        // checking if the textfield should be secure
         if secureField /* then */ { txtField.isSecureTextEntry = true }
         // setting translatesAutoresizingMaskIntoConstraints
         // to false allows us to use constrains
         txtField.translatesAutoresizingMaskIntoConstraints = false
-        // setting the background color to clear so it can be one with the app color
         txtField.backgroundColor = .clear
         // setting the borders to a gold color
         // the goldColor is implemented in HexColorImplementation.swift file
         txtField.layer.borderColor = goldColor.cgColor
-        // setting the corner radius to 20
         // this will give us a Rounded Rectangle
         txtField.layer.cornerRadius = 20
-        // setting the typed text color of the text field to goldColor
         txtField.textColor = goldColor
         // setting the clipYoBounds true so it will not go over the borders
         // we have a clear background so this may not be necessary
         // however when it comes to password entry the background may chhange to a yellow color which then it goes over the border
         txtField.clipsToBounds = true
-        // setting the width of the textfield to 300
         txtField.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        // setting the borderWidth to 1
-        // i did not want the border to be too thick
         txtField.layer.borderWidth = 1
-        // setting the allignment to center
-        // I could set it to leading and have a little offset to the right in the future
         txtField.textAlignment = .center
         // changing the placeholder color to goldColor
         txtField.attributedPlaceholder = NSAttributedString(string: "\(placeholder)", attributes: [NSAttributedString.Key.foregroundColor: goldColor])
@@ -226,22 +214,16 @@ extension RegisterScreen {
     func buttonConfiguration (button: UIButton, placeholder: String) {
         // rounded rectangle look
         button.layer.cornerRadius = 20
-        // goldcolor in the border
         button.layer.borderColor = goldColor.cgColor
-        // I wanted the buttons to stand out from textFields
-        // So i made their background goldcolor
-        // and i changed their textColor to appColor
         button.backgroundColor = goldColor
-        // little border width
         button.layer.borderWidth = 1
-        // the text inside the button as the placeholder
         button.setTitle("\(placeholder)", for: .normal)
         // adding a shadow to the buttons
         button.layer.shadowColor = goldColor.cgColor
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
         button.layer.shadowOpacity = 1
         button.layer.shadowRadius = 6
-        // setting the titlecolor (placeholder)
+
         button.setTitleColor(appColor, for: .normal)
         // enabling our constraints
         button.translatesAutoresizingMaskIntoConstraints = false
