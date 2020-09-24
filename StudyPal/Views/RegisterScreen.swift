@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
+import Firebase
+
 
 // this protocol is going to be used to share data from the child view to the parent view
 protocol UniversityDelegate {
@@ -22,11 +26,9 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
     func retractUni(uniName: String) {
         university.setTitle(uniName, for: .normal)
     }
-    
     func retractMajor(majorName: String) {
         major.setTitle(majorName, for: .normal)
     }
-    
     /*
      Initilization of a scroll view
      > Main purpose of this scroll view is to enable the app in landscape mode
@@ -37,7 +39,6 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
      > When we have a Scroll view it is better to use a stack view inside it
      */
     let stackView = UIStackView()
-    
     //********************************
     //********** Text Fields *********
     //********************************
@@ -46,15 +47,12 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
      I created a function that takes a textfield as UITextField, a placehorlder as a String and fieldWidth as a CGFloat
      we pass each one of these text fields to that function and implement their design
      */
-    
     let name = UITextField()
     let email = UITextField()
     let password = UITextField()
     let confirmPassword = UITextField()
     var selectedUniversity: String?
     var selectedMajor: String?
-    
-    
     //***********************************
     //************ Buttons **************
     //***********************************
@@ -65,8 +63,6 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
     let university = UIButton()
     let major = UIButton()
     let submit = UIButton()
-    
-
     /*
      Here's what goes down when the view loads
      ScrollViewConfiguration -> Setting up the scrollView and attatching it to the screen
@@ -86,7 +82,6 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
         addConstraints()
     }
 }
-    
 // ************ SCROLL & STACK VIEW EXTENSION ***************
 // we are configuring the views we have implemented at the top
 extension RegisterScreen {
@@ -95,13 +90,12 @@ extension RegisterScreen {
         scroll.translatesAutoresizingMaskIntoConstraints = false
         scroll.bounces = true
         scroll.delegate = self
-        
         // we are adding out scrollView into our main view
         view.addSubview(scroll)
         // down below we are saying that our scroll view should have the same dimensions as our view
         // except for the top side of our scroll view that should be 50 below of the topside of our main view
         scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true;
-        scroll.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true;
+        scroll.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true;
         scroll.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true;
         scroll.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true;
     }
@@ -118,17 +112,13 @@ extension RegisterScreen {
         stackView.leadingAnchor.constraint(equalTo: scroll.leadingAnchor).isActive = true;
         stackView.topAnchor.constraint(equalTo: scroll.topAnchor, constant: 100).isActive = true;
         stackView.trailingAnchor.constraint(equalTo: scroll.trailingAnchor).isActive = true;
-        stackView.bottomAnchor.constraint(equalTo: scroll.bottomAnchor).isActive = true;
+        stackView.bottomAnchor.constraint(equalTo: scroll.bottomAnchor, constant: -10).isActive = true;
         // this width was necessary because in my tests i had a larger width than expected
         // it was scrolling horizantally
         // after adding this constraint it solved that problem
         stackView.widthAnchor.constraint(equalTo: scroll.widthAnchor).isActive = true
     }
 }
-    
-
-    
-    
 // *************** TEXT FIELD EXTENSION ************
 /*
      > I am using extensions to make the code easier to navigate and to read
@@ -202,7 +192,6 @@ extension RegisterScreen {
         buttonConfiguration(button: university, placeholder: "University")
         buttonConfiguration(button: major, placeholder: "Major")
         buttonConfiguration(button: submit, placeholder: "Submit")
-
         university.addTarget(self, action: #selector(universityClicked), for: .touchUpInside)
         major.addTarget(self, action: #selector(majorClicked), for: .touchUpInside)
         submit.addTarget(self, action: #selector(submitClicked), for: .touchUpInside)
@@ -223,7 +212,6 @@ extension RegisterScreen {
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
         button.layer.shadowOpacity = 1
         button.layer.shadowRadius = 6
-
         button.setTitleColor(appColor, for: .normal)
         // enabling our constraints
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -251,17 +239,13 @@ extension RegisterScreen {
         let validUni = universityValidation()
         let validMAjor = majorValidation()
         if passwordCheck.0 && emailCheck && validName && validUni && validMAjor {
-            print("yo")
-            /*
-             if everything checks out we will call the database here
-             */
+            addUserToFirebase()
         }
     }
     // TODO: implement
     @objc func universityClicked () {
         animateButtons(sender: university)
         // go to the university view
-        
         let uniScreen = UniversityScreen()
         uniScreen.delegate = self
         navigationController?.pushViewController(uniScreen, animated: true)
@@ -308,7 +292,6 @@ extension RegisterScreen {
             // add action is just the dismiss button here
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             // presenting the alert here
-            self.present(alert, animated: true, completion: nil)
         }
         return check
     }
@@ -389,6 +372,8 @@ extension RegisterScreen {
 extension RegisterScreen {
     func universityValidation () -> Bool {
         if university.currentTitle?.lowercased() == "university" {
+            let alert = UIAlertController(title: "No University Selected", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             return false
         }
         return true
@@ -396,9 +381,49 @@ extension RegisterScreen {
     // same thing with what we did to university but this time it's with major
     func majorValidation () -> Bool {
         if major.currentTitle?.lowercased() == "major" {
+            let alert = UIAlertController(title: "No major Selected", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             return false
         }
         return true
+    }
+}
+
+/*
+ EXTENSION TO ADD THE USER TO THE CLOUD DATABASE
+ */
+extension RegisterScreen {
+    func addUserToFirebase () {
+        let newUser = User(email: email.text!,
+                           name: name.text!,
+                           password: password.text!,
+                           university: university.titleLabel!.text!,
+                           major: major.titleLabel!.text!)
+        // using the firebase createuser function to add the user
+        Auth.auth().createUser(withEmail: newUser.email, password: newUser.password) { (result, err) in
+            if err != nil {
+                let alert = UIAlertController(title: "error", message: "error", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                // userdata will containt the key : value pairs each user will have in theri account
+                let userData =
+                            ["name" : newUser.name,
+                            "university" : newUser.university,
+                            "major" : newUser.major,
+                            "uid" : result!.user.uid]
+                let db = Firestore.firestore()
+                db.collection("Users").addDocument(data: userData) { (errorMes) in
+                    if errorMes != nil {
+                        print("\(String(describing: errorMes?.localizedDescription))")
+                    }
+                }
+            }
+        }
+        let successAlert = UIAlertController(title: "SUCCESS", message: "Registration Completed", preferredStyle: .alert)
+        successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (ALRT) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(successAlert, animated: true, completion: nil)
     }
 }
 

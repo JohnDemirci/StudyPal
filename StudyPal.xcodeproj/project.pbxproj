@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		5808A09C2511D7B700851665 /* UniversityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5808A09B2511D7B700851665 /* UniversityScreen.swift */; };
 		586FC5AA2503F83B00BBE653 /* HexColorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */; };
 		5876A00525151D12000A4379 /* buttonAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876A00425151D12000A4379 /* buttonAnimations.swift */; };
+		589B38A2251BC4B7006A7606 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 589B38A1251BC4B7006A7606 /* GoogleService-Info.plist */; };
+		589D5FB1251BE833002E4786 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D5FB0251BE833002E4786 /* UserModel.swift */; };
+		589D5FB4251C1814002E4786 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D5FB3251C1814002E4786 /* LoggedInView.swift */; };
 		58C7ADDD2515EACC00CB69D6 /* UnivversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7ADDC2515EACC00CB69D6 /* UnivversityTableViewCell.swift */; };
 		58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD25D2503F6DC0044F201 /* AppDelegate.swift */; };
 		58CBD2602503F6DC0044F201 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD25F2503F6DC0044F201 /* SceneDelegate.swift */; };
@@ -22,6 +25,7 @@
 		58E02FC92516C8E5004C1B37 /* MajorListFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FC82516C8E5004C1B37 /* MajorListFile.swift */; };
 		58E02FCD2516CC46004C1B37 /* MajorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FCC2516CC46004C1B37 /* MajorScreen.swift */; };
 		58E02FD02516CDCD004C1B37 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FCF2516CDCD004C1B37 /* MajorTableViewCell.swift */; };
+		E2257EFFCE007B593E5CE391 /* Pods_StudyPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733A46F3632DFF5170CA26A2 /* Pods_StudyPal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,9 @@
 		5808A09B2511D7B700851665 /* UniversityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityScreen.swift; sourceTree = "<group>"; };
 		586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorImplementation.swift; sourceTree = "<group>"; };
 		5876A00425151D12000A4379 /* buttonAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonAnimations.swift; sourceTree = "<group>"; };
+		589B38A1251BC4B7006A7606 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		589D5FB0251BE833002E4786 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		589D5FB3251C1814002E4786 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		58C7ADDC2515EACC00CB69D6 /* UnivversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivversityTableViewCell.swift; sourceTree = "<group>"; };
 		58CBD25A2503F6DC0044F201 /* StudyPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CBD25D2503F6DC0044F201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +49,9 @@
 		58E02FC82516C8E5004C1B37 /* MajorListFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorListFile.swift; sourceTree = "<group>"; };
 		58E02FCC2516CC46004C1B37 /* MajorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScreen.swift; sourceTree = "<group>"; };
 		58E02FCF2516CDCD004C1B37 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
+		733A46F3632DFF5170CA26A2 /* Pods_StudyPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A184D377C6634353640A468 /* Pods-StudyPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyPal.release.xcconfig"; path = "Target Support Files/Pods-StudyPal/Pods-StudyPal.release.xcconfig"; sourceTree = "<group>"; };
+		8C97D544AA79D6519D3D1ECB /* Pods-StudyPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyPal.debug.xcconfig"; path = "Target Support Files/Pods-StudyPal/Pods-StudyPal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +59,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2257EFFCE007B593E5CE391 /* Pods_StudyPal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0D3B2920F3D4254FBC09B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				733A46F3632DFF5170CA26A2 /* Pods_StudyPal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5808A09A2511D78F00851665 /* UniversitySelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +100,7 @@
 				5808A09A2511D78F00851665 /* UniversitySelection */,
 				58CBD2612503F6DC0044F201 /* HomeView.swift */,
 				58D119FE250427B20076F998 /* RegisterScreen.swift */,
+				589D5FB3251C1814002E4786 /* LoggedInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -90,6 +110,8 @@
 			children = (
 				58CBD25C2503F6DC0044F201 /* StudyPal */,
 				58CBD25B2503F6DC0044F201 /* Products */,
+				BA7A6C9F992E4FCA4F9B3D90 /* Pods */,
+				2C0D3B2920F3D4254FBC09B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,8 +132,10 @@
 				58CBD26B2503F6DD0044F201 /* LaunchScreen.storyboard */,
 				58CBD26E2503F6DD0044F201 /* Info.plist */,
 				58CBD2662503F6DC0044F201 /* StudyPal.xcdatamodeld */,
+				589B38A1251BC4B7006A7606 /* GoogleService-Info.plist */,
 				586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */,
 				5876A00425151D12000A4379 /* buttonAnimations.swift */,
+				589D5FB0251BE833002E4786 /* UserModel.swift */,
 			);
 			path = StudyPal;
 			sourceTree = "<group>";
@@ -126,6 +150,15 @@
 			path = MajorSelection;
 			sourceTree = "<group>";
 		};
+		BA7A6C9F992E4FCA4F9B3D90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C97D544AA79D6519D3D1ECB /* Pods-StudyPal.debug.xcconfig */,
+				8A184D377C6634353640A468 /* Pods-StudyPal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58CBD2712503F6DD0044F201 /* Build configuration list for PBXNativeTarget "StudyPal" */;
 			buildPhases = (
+				F506EBCCBA2BDAE576E8CF7D /* [CP] Check Pods Manifest.lock */,
 				58CBD2562503F6DC0044F201 /* Sources */,
 				58CBD2572503F6DC0044F201 /* Frameworks */,
 				58CBD2582503F6DC0044F201 /* Resources */,
+				69689D6FA90601D881A54ECA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,10 +221,53 @@
 			files = (
 				58CBD26D2503F6DD0044F201 /* LaunchScreen.storyboard in Resources */,
 				58CBD26A2503F6DD0044F201 /* Assets.xcassets in Resources */,
+				589B38A2251BC4B7006A7606 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69689D6FA90601D881A54ECA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyPal/Pods-StudyPal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyPal/Pods-StudyPal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyPal/Pods-StudyPal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F506EBCCBA2BDAE576E8CF7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyPal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58CBD2562503F6DC0044F201 /* Sources */ = {
@@ -204,7 +282,9 @@
 				58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */,
 				58E02FD02516CDCD004C1B37 /* MajorTableViewCell.swift in Sources */,
 				586FC5AA2503F83B00BBE653 /* HexColorImplementation.swift in Sources */,
+				589D5FB1251BE833002E4786 /* UserModel.swift in Sources */,
 				58CBD2602503F6DC0044F201 /* SceneDelegate.swift in Sources */,
+				589D5FB4251C1814002E4786 /* LoggedInView.swift in Sources */,
 				5808A09C2511D7B700851665 /* UniversityScreen.swift in Sources */,
 				58E02FCD2516CC46004C1B37 /* MajorScreen.swift in Sources */,
 				5805B7B92515E55200C0ACDC /* universityList.swift in Sources */,
@@ -276,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -330,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -342,6 +422,7 @@
 		};
 		58CBD2722503F6DD0044F201 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C97D544AA79D6519D3D1ECB /* Pods-StudyPal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -360,6 +441,7 @@
 		};
 		58CBD2732503F6DD0044F201 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A184D377C6634353640A468 /* Pods-StudyPal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -8,6 +8,8 @@
 
 import UIKit
 
+import FirebaseAuth
+
 class HomeView: UIViewController {
     
     var homeScrollView = UIScrollView()
@@ -237,6 +239,9 @@ extension HomeView {
             case "Register":
                 RegisterTapped()
                 break
+            case "Login":
+                loginTapped()
+                break
             default:
                 print("sup")
             }
@@ -249,6 +254,32 @@ extension HomeView {
         regScreen.title = "Register"
         navigationController?.pushViewController(regScreen, animated: true)
     }
+    
+    
+    
+    /*
+     we connect to our database in the cloud and check the email and password
+     if they match it means the user entered the right info
+     in case of a match we go to the log in screen
+     
+     note: the username is actually the email address
+     */
+    func loginTapped () {
+        if homeUsername.text != nil && homePassword.text != nil {
+            let email = homeUsername.text!
+            let password = homePassword.text!
+            Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+                if err != nil { print(err?.localizedDescription as Any )}
+                else {
+                    let loggedin = LoggedInView()
+                    loggedin.title = "Main"
+                    self.navigationController?.pushViewController(LoggedInView(), animated: true)
+                }
+            }
+        }
+    }
+    
+    
 }
 
 // ********* CONSTRAINT EXTENSION ***********
