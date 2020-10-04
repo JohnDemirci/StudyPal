@@ -410,13 +410,17 @@ extension RegisterScreen {
                             ["name" : newUser.name,
                             "university" : newUser.university,
                             "major" : newUser.major,
-                            "uid" : result!.user.uid]
+                            "uid" : result!.user.uid,
+                            "password" : newUser.password]
                 let db = Firestore.firestore()
-                db.collection("Users").addDocument(data: userData) { (errorMes) in
-                    if errorMes != nil {
-                        print("\(String(describing: errorMes?.localizedDescription))")
-                    }
-                }
+                db.collection("Users").document(result!.user.uid).setData(userData)
+                /*
+                 db.collection("Users").addDocument(data: userData) { (errorMes) in
+                     if errorMes != nil {
+                         print("\(String(describing: errorMes?.localizedDescription))")
+                     }
+                 }
+                 */
             }
         }
         let successAlert = UIAlertController(title: "SUCCESS", message: "Registration Completed", preferredStyle: .alert)

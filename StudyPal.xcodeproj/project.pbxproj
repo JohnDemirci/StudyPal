@@ -21,6 +21,7 @@
 		58CBD2682503F6DC0044F201 /* StudyPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD2662503F6DC0044F201 /* StudyPal.xcdatamodeld */; };
 		58CBD26A2503F6DD0044F201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CBD2692503F6DD0044F201 /* Assets.xcassets */; };
 		58CBD26D2503F6DD0044F201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CBD26B2503F6DD0044F201 /* LaunchScreen.storyboard */; };
+		58CF61B4252995C800219A3F /* CreatePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF61B3252995C800219A3F /* CreatePost.swift */; };
 		58D119FF250427B20076F998 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D119FE250427B20076F998 /* RegisterScreen.swift */; };
 		58E02FC92516C8E5004C1B37 /* MajorListFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FC82516C8E5004C1B37 /* MajorListFile.swift */; };
 		58E02FCD2516CC46004C1B37 /* MajorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FCC2516CC46004C1B37 /* MajorScreen.swift */; };
@@ -45,6 +46,7 @@
 		58CBD2692503F6DD0044F201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58CBD26C2503F6DD0044F201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58CBD26E2503F6DD0044F201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58CF61B3252995C800219A3F /* CreatePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePost.swift; sourceTree = "<group>"; };
 		58D119FE250427B20076F998 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		58E02FC82516C8E5004C1B37 /* MajorListFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorListFile.swift; sourceTree = "<group>"; };
 		58E02FCC2516CC46004C1B37 /* MajorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScreen.swift; sourceTree = "<group>"; };
@@ -96,11 +98,11 @@
 		586FC5AC2503F88D00BBE653 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				58CF61B125298CB000219A3F /* LoggedInView */,
 				58E02FC72516C8C6004C1B37 /* MajorSelection */,
 				5808A09A2511D78F00851665 /* UniversitySelection */,
 				58CBD2612503F6DC0044F201 /* HomeView.swift */,
 				58D119FE250427B20076F998 /* RegisterScreen.swift */,
-				589D5FB3251C1814002E4786 /* LoggedInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +128,7 @@
 		58CBD25C2503F6DC0044F201 /* StudyPal */ = {
 			isa = PBXGroup;
 			children = (
+				58D7E1D7251E96040041672E /* Implementations */,
 				586FC5AC2503F88D00BBE653 /* Views */,
 				586FC5AB2503F87600BBE653 /* Delegates */,
 				58CBD2692503F6DD0044F201 /* Assets.xcassets */,
@@ -133,11 +136,27 @@
 				58CBD26E2503F6DD0044F201 /* Info.plist */,
 				58CBD2662503F6DC0044F201 /* StudyPal.xcdatamodeld */,
 				589B38A1251BC4B7006A7606 /* GoogleService-Info.plist */,
-				586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */,
-				5876A00425151D12000A4379 /* buttonAnimations.swift */,
-				589D5FB0251BE833002E4786 /* UserModel.swift */,
 			);
 			path = StudyPal;
+			sourceTree = "<group>";
+		};
+		58CF61B125298CB000219A3F /* LoggedInView */ = {
+			isa = PBXGroup;
+			children = (
+				589D5FB3251C1814002E4786 /* LoggedInView.swift */,
+				58CF61B3252995C800219A3F /* CreatePost.swift */,
+			);
+			path = LoggedInView;
+			sourceTree = "<group>";
+		};
+		58D7E1D7251E96040041672E /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */,
+				589D5FB0251BE833002E4786 /* UserModel.swift */,
+				5876A00425151D12000A4379 /* buttonAnimations.swift */,
+			);
+			path = Implementations;
 			sourceTree = "<group>";
 		};
 		58E02FC72516C8C6004C1B37 /* MajorSelection */ = {
@@ -279,6 +298,7 @@
 				5876A00525151D12000A4379 /* buttonAnimations.swift in Sources */,
 				58D119FF250427B20076F998 /* RegisterScreen.swift in Sources */,
 				58CBD2622503F6DC0044F201 /* HomeView.swift in Sources */,
+				58CF61B4252995C800219A3F /* CreatePost.swift in Sources */,
 				58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */,
 				58E02FD02516CDCD004C1B37 /* MajorTableViewCell.swift in Sources */,
 				586FC5AA2503F83B00BBE653 /* HexColorImplementation.swift in Sources */,

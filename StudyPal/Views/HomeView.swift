@@ -9,9 +9,20 @@
 import UIKit
 
 import FirebaseAuth
+import FirebaseFirestore
+import Firebase
 
 class HomeView: UIViewController {
     
+    // this blank view is going to be used to adjust the elements in the screen
+    // it will work as a spacer
+    var blankView : UIView = {
+        let blank = UIView()
+        blank.translatesAutoresizingMaskIntoConstraints = false
+        blank.backgroundColor = .clear
+        blank.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        return blank
+    }()
     var homeScrollView = UIScrollView()
     var homeStackView = UIStackView()
     var homeUsername = UITextField()
@@ -76,10 +87,17 @@ extension HomeView: UIScrollViewDelegate {
         // because it would make it more readable and
         // since the function is named scroll view configuration
         // it seemed like it would fit well
+
+        
+        homeScrollView.frame = view.bounds
+        homeScrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        homeScrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         homeScrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        homeScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        homeScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         homeScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        homeScrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        homeScrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+
+        
     }
     // after scroll view is called then we add a stackView
     // this will cover the scrollView
@@ -90,7 +108,7 @@ extension HomeView: UIScrollViewDelegate {
         homeStackView.axis = .vertical
         homeStackView.distribution = .fillProportionally
         homeStackView.alignment = .center
-        homeStackView.spacing = 50
+        homeStackView.spacing = 30
         // adding to the view and setting the constraints down
         // same reason as how i did the scroll view
         // it is more readable if they are here instead of the constraint func
@@ -221,7 +239,6 @@ extension HomeView {
         // now i write a switch statement and call functions based on which button is pressed
         // i am sure this is a pretty bad way to do this i might change it later
         // we are unwrapping optional value here since it could be niil
-        
         /*
          TODO: CODE BELOW IS BAD PLS OPTIMIZE IT
          */
@@ -229,6 +246,7 @@ extension HomeView {
             switch title {
                 // if the remember me button is tapped we toggle the selected value
                 // and change the appearance
+                // then we tell the core data to remember the login information
             case "Remember Me ❌":
                 rememberMeButton.setTitle("Remember Me ✅", for: .normal)
                 break
@@ -269,17 +287,33 @@ extension HomeView {
             let email = homeUsername.text!
             let password = homePassword.text!
             Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
-                if err != nil { print(err?.localizedDescription as Any )}
+                if err != nil {
+                    /*
+                     TODO: IMPLEMENT AN ALERT IN CASE LOGIN IS NOT SUCCESSFUL
+                     */
+                    let alert = UIAlertController(title: "Error", message: "email or password did not match", preferredStyle: .alert)
+                    // add action is just the dismiss button here
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    // presenting the alert here
+                    self.present(alert, animated: true, completion: nil)
+                    print(err?.localizedDescription as Any )
+                }
                 else {
-                    let loggedin = LoggedInView()
-                    loggedin.title = "Main"
-                    self.navigationController?.pushViewController(LoggedInView(), animated: true)
+                    let db = Firestore.firestore()
+                    var mjr: String?
+                    let userIdentification = result!.user.uid
+                    db.collection("Users").document(userIdentification).getDocument { (document, err) in
+                        let docData = document?.data()
+                        mjr = docData!["major"] as? String
+                        let loggedin = LoggedInView()
+                        loggedin.userId = userIdentification
+                        loggedin.title = mjr
+                        self.navigationController?.pushViewController(loggedin, animated: true)
+                    }
                 }
             }
         }
     }
-    
-    
 }
 
 // ********* CONSTRAINT EXTENSION ***********
@@ -296,6 +330,8 @@ extension HomeView {
         // now we want to add two buttons to a stack
         // and we want to add that stack to the stack we already created
         // code below does that
+        
+        homeStackView.addArrangedSubview(blankView)
         buttonHStack.addArrangedSubview(homeRegister)
         buttonHStack.addArrangedSubview(homeLogin)
         homeStackView.addArrangedSubview(buttonHStack)
