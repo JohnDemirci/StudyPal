@@ -29,7 +29,7 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
     func retractMajor(majorName: String) {
         major.setTitle(majorName, for: .normal)
     }
-    /*
+    /*™
      Initilization of a scroll view
      > Main purpose of this scroll view is to enable the app in landscape mode
      */
