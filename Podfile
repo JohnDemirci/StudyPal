@@ -15,7 +15,7 @@ target 'StudyPal' do
       t.build_configurations.each do |config|
         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
       end
-    end
+   end
 end
 
   # Pods for StudyPal

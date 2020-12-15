@@ -9,19 +9,31 @@
 /* Begin PBXBuildFile section */
 		5805B7B92515E55200C0ACDC /* universityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805B7B82515E55200C0ACDC /* universityList.swift */; };
 		5808A09C2511D7B700851665 /* UniversityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5808A09B2511D7B700851665 /* UniversityScreen.swift */; };
+		5854DACF25748BBD004490A8 /* MainFeedBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854DACE25748BBD004490A8 /* MainFeedBarButton.swift */; };
+		5854DAD525748C43004490A8 /* MainFeedProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854DAD425748C42004490A8 /* MainFeedProfileImage.swift */; };
 		586FC5AA2503F83B00BBE653 /* HexColorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */; };
+		587624E3254A4F7E00DBEDA7 /* CreatePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587624E2254A4F7E00DBEDA7 /* CreatePostModel.swift */; };
+		587624E7254A520600DBEDA7 /* TextFieldConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587624E6254A520600DBEDA7 /* TextFieldConfigure.swift */; };
 		5876A00525151D12000A4379 /* buttonAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876A00425151D12000A4379 /* buttonAnimations.swift */; };
+		5885B5CE2585B35C00A78670 /* LVScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5CD2585B35C00A78670 /* LVScrollView.swift */; };
+		5885B5D12585B42C00A78670 /* LVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5D02585B42C00A78670 /* LVStackView.swift */; };
+		5885B5D42585B47600A78670 /* LVTextfields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5D32585B47600A78670 /* LVTextfields.swift */; };
+		5885B5D72585B4D800A78670 /* LVConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5D62585B4D800A78670 /* LVConstraints.swift */; };
+		5885B5DA2585B8D300A78670 /* LVButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5D92585B8D300A78670 /* LVButtons.swift */; };
+		5885B5DD2585D17200A78670 /* login_validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5DC2585D17200A78670 /* login_validations.swift */; };
+		5885B5E02585D1DD00A78670 /* ErrorFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5DF2585D1DD00A78670 /* ErrorFile.swift */; };
+		5885B5E32585D71000A78670 /* Error Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5E22585D71000A78670 /* Error Alerts.swift */; };
+		5885B5E62585DE0700A78670 /* static_naming_conventions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885B5E52585DE0700A78670 /* static_naming_conventions.swift */; };
 		589B38A2251BC4B7006A7606 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 589B38A1251BC4B7006A7606 /* GoogleService-Info.plist */; };
 		589D5FB1251BE833002E4786 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D5FB0251BE833002E4786 /* UserModel.swift */; };
 		589D5FB4251C1814002E4786 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D5FB3251C1814002E4786 /* LoggedInView.swift */; };
 		58C7ADDD2515EACC00CB69D6 /* UnivversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7ADDC2515EACC00CB69D6 /* UnivversityTableViewCell.swift */; };
 		58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD25D2503F6DC0044F201 /* AppDelegate.swift */; };
 		58CBD2602503F6DC0044F201 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD25F2503F6DC0044F201 /* SceneDelegate.swift */; };
-		58CBD2622503F6DC0044F201 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD2612503F6DC0044F201 /* HomeView.swift */; };
+		58CBD2622503F6DC0044F201 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD2612503F6DC0044F201 /* LaunchView.swift */; };
 		58CBD2682503F6DC0044F201 /* StudyPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD2662503F6DC0044F201 /* StudyPal.xcdatamodeld */; };
 		58CBD26A2503F6DD0044F201 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CBD2692503F6DD0044F201 /* Assets.xcassets */; };
 		58CBD26D2503F6DD0044F201 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CBD26B2503F6DD0044F201 /* LaunchScreen.storyboard */; };
-		58CF61B4252995C800219A3F /* CreatePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF61B3252995C800219A3F /* CreatePost.swift */; };
 		58D119FF250427B20076F998 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D119FE250427B20076F998 /* RegisterScreen.swift */; };
 		58E02FC92516C8E5004C1B37 /* MajorListFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FC82516C8E5004C1B37 /* MajorListFile.swift */; };
 		58E02FCD2516CC46004C1B37 /* MajorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E02FCC2516CC46004C1B37 /* MajorScreen.swift */; };
@@ -32,8 +44,21 @@
 /* Begin PBXFileReference section */
 		5805B7B82515E55200C0ACDC /* universityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = universityList.swift; sourceTree = "<group>"; };
 		5808A09B2511D7B700851665 /* UniversityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityScreen.swift; sourceTree = "<group>"; };
+		5854DACE25748BBD004490A8 /* MainFeedBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedBarButton.swift; sourceTree = "<group>"; };
+		5854DAD425748C42004490A8 /* MainFeedProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedProfileImage.swift; sourceTree = "<group>"; };
 		586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorImplementation.swift; sourceTree = "<group>"; };
+		587624E2254A4F7E00DBEDA7 /* CreatePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostModel.swift; sourceTree = "<group>"; };
+		587624E6254A520600DBEDA7 /* TextFieldConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldConfigure.swift; sourceTree = "<group>"; };
 		5876A00425151D12000A4379 /* buttonAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonAnimations.swift; sourceTree = "<group>"; };
+		5885B5CD2585B35C00A78670 /* LVScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVScrollView.swift; sourceTree = "<group>"; };
+		5885B5D02585B42C00A78670 /* LVStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVStackView.swift; sourceTree = "<group>"; };
+		5885B5D32585B47600A78670 /* LVTextfields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVTextfields.swift; sourceTree = "<group>"; };
+		5885B5D62585B4D800A78670 /* LVConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVConstraints.swift; sourceTree = "<group>"; };
+		5885B5D92585B8D300A78670 /* LVButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVButtons.swift; sourceTree = "<group>"; };
+		5885B5DC2585D17200A78670 /* login_validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login_validations.swift; sourceTree = "<group>"; };
+		5885B5DF2585D1DD00A78670 /* ErrorFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFile.swift; sourceTree = "<group>"; };
+		5885B5E22585D71000A78670 /* Error Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error Alerts.swift"; sourceTree = "<group>"; };
+		5885B5E52585DE0700A78670 /* static_naming_conventions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = static_naming_conventions.swift; sourceTree = "<group>"; };
 		589B38A1251BC4B7006A7606 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		589D5FB0251BE833002E4786 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		589D5FB3251C1814002E4786 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
@@ -41,12 +66,11 @@
 		58CBD25A2503F6DC0044F201 /* StudyPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CBD25D2503F6DC0044F201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58CBD25F2503F6DC0044F201 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		58CBD2612503F6DC0044F201 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		58CBD2612503F6DC0044F201 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		58CBD2672503F6DC0044F201 /* StudyPal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyPal.xcdatamodel; sourceTree = "<group>"; };
 		58CBD2692503F6DD0044F201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58CBD26C2503F6DD0044F201 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58CBD26E2503F6DD0044F201 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58CF61B3252995C800219A3F /* CreatePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePost.swift; sourceTree = "<group>"; };
 		58D119FE250427B20076F998 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		58E02FC82516C8E5004C1B37 /* MajorListFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorListFile.swift; sourceTree = "<group>"; };
 		58E02FCC2516CC46004C1B37 /* MajorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScreen.swift; sourceTree = "<group>"; };
@@ -86,6 +110,23 @@
 			path = UniversitySelection;
 			sourceTree = "<group>";
 		};
+		580CC7F12586097A00C5D0F1 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				5808A09A2511D78F00851665 /* UniversitySelection */,
+				58E02FC72516C8C6004C1B37 /* MajorSelection */,
+				58D119FE250427B20076F998 /* RegisterScreen.swift */,
+			);
+			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		5854DAD225748BE5004490A8 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		586FC5AB2503F87600BBE653 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,13 +139,26 @@
 		586FC5AC2503F88D00BBE653 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				58CF61B125298CB000219A3F /* LoggedInView */,
-				58E02FC72516C8C6004C1B37 /* MajorSelection */,
-				5808A09A2511D78F00851665 /* UniversitySelection */,
-				58CBD2612503F6DC0044F201 /* HomeView.swift */,
-				58D119FE250427B20076F998 /* RegisterScreen.swift */,
+				580CC7F12586097A00C5D0F1 /* RegisterView */,
+				5885B5C92585B32400A78670 /* Launch View */,
+				58CF61B125298CB000219A3F /* Main Feed */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5885B5C92585B32400A78670 /* Launch View */ = {
+			isa = PBXGroup;
+			children = (
+				58CBD2612503F6DC0044F201 /* LaunchView.swift */,
+				5885B5CD2585B35C00A78670 /* LVScrollView.swift */,
+				5885B5D02585B42C00A78670 /* LVStackView.swift */,
+				5885B5D32585B47600A78670 /* LVTextfields.swift */,
+				5885B5D62585B4D800A78670 /* LVConstraints.swift */,
+				5885B5D92585B8D300A78670 /* LVButtons.swift */,
+				5885B5DC2585D17200A78670 /* login_validations.swift */,
+				5885B5E22585D71000A78670 /* Error Alerts.swift */,
+			);
+			path = "Launch View";
 			sourceTree = "<group>";
 		};
 		58CBD2512503F6DC0044F201 = {
@@ -128,6 +182,7 @@
 		58CBD25C2503F6DC0044F201 /* StudyPal */ = {
 			isa = PBXGroup;
 			children = (
+				5854DAD225748BE5004490A8 /* Modals */,
 				58D7E1D7251E96040041672E /* Implementations */,
 				586FC5AC2503F88D00BBE653 /* Views */,
 				586FC5AB2503F87600BBE653 /* Delegates */,
@@ -140,13 +195,14 @@
 			path = StudyPal;
 			sourceTree = "<group>";
 		};
-		58CF61B125298CB000219A3F /* LoggedInView */ = {
+		58CF61B125298CB000219A3F /* Main Feed */ = {
 			isa = PBXGroup;
 			children = (
 				589D5FB3251C1814002E4786 /* LoggedInView.swift */,
-				58CF61B3252995C800219A3F /* CreatePost.swift */,
+				5854DACE25748BBD004490A8 /* MainFeedBarButton.swift */,
+				5854DAD425748C42004490A8 /* MainFeedProfileImage.swift */,
 			);
-			path = LoggedInView;
+			path = "Main Feed";
 			sourceTree = "<group>";
 		};
 		58D7E1D7251E96040041672E /* Implementations */ = {
@@ -155,6 +211,10 @@
 				586FC5A92503F83B00BBE653 /* HexColorImplementation.swift */,
 				589D5FB0251BE833002E4786 /* UserModel.swift */,
 				5876A00425151D12000A4379 /* buttonAnimations.swift */,
+				587624E2254A4F7E00DBEDA7 /* CreatePostModel.swift */,
+				587624E6254A520600DBEDA7 /* TextFieldConfigure.swift */,
+				5885B5DF2585D1DD00A78670 /* ErrorFile.swift */,
+				5885B5E52585DE0700A78670 /* static_naming_conventions.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -207,7 +267,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = DemirciJohn;
 				TargetAttributes = {
 					58CBD2592503F6DC0044F201 = {
@@ -297,18 +357,30 @@
 				58E02FC92516C8E5004C1B37 /* MajorListFile.swift in Sources */,
 				5876A00525151D12000A4379 /* buttonAnimations.swift in Sources */,
 				58D119FF250427B20076F998 /* RegisterScreen.swift in Sources */,
-				58CBD2622503F6DC0044F201 /* HomeView.swift in Sources */,
-				58CF61B4252995C800219A3F /* CreatePost.swift in Sources */,
+				58CBD2622503F6DC0044F201 /* LaunchView.swift in Sources */,
 				58CBD25E2503F6DC0044F201 /* AppDelegate.swift in Sources */,
+				5854DACF25748BBD004490A8 /* MainFeedBarButton.swift in Sources */,
 				58E02FD02516CDCD004C1B37 /* MajorTableViewCell.swift in Sources */,
 				586FC5AA2503F83B00BBE653 /* HexColorImplementation.swift in Sources */,
 				589D5FB1251BE833002E4786 /* UserModel.swift in Sources */,
+				5885B5D12585B42C00A78670 /* LVStackView.swift in Sources */,
+				5885B5DA2585B8D300A78670 /* LVButtons.swift in Sources */,
+				5885B5E62585DE0700A78670 /* static_naming_conventions.swift in Sources */,
+				5885B5D42585B47600A78670 /* LVTextfields.swift in Sources */,
+				587624E7254A520600DBEDA7 /* TextFieldConfigure.swift in Sources */,
 				58CBD2602503F6DC0044F201 /* SceneDelegate.swift in Sources */,
 				589D5FB4251C1814002E4786 /* LoggedInView.swift in Sources */,
+				5885B5CE2585B35C00A78670 /* LVScrollView.swift in Sources */,
+				5885B5E32585D71000A78670 /* Error Alerts.swift in Sources */,
+				5885B5D72585B4D800A78670 /* LVConstraints.swift in Sources */,
+				587624E3254A4F7E00DBEDA7 /* CreatePostModel.swift in Sources */,
 				5808A09C2511D7B700851665 /* UniversityScreen.swift in Sources */,
 				58E02FCD2516CC46004C1B37 /* MajorScreen.swift in Sources */,
+				5885B5DD2585D17200A78670 /* login_validations.swift in Sources */,
 				5805B7B92515E55200C0ACDC /* universityList.swift in Sources */,
 				58CBD2682503F6DC0044F201 /* StudyPal.xcdatamodeld in Sources */,
+				5885B5E02585D1DD00A78670 /* ErrorFile.swift in Sources */,
+				5854DAD525748C43004490A8 /* MainFeedProfileImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

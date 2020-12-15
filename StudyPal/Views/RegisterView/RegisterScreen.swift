@@ -47,10 +47,10 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
      I created a function that takes a textfield as UITextField, a placehorlder as a String and fieldWidth as a CGFloat
      we pass each one of these text fields to that function and implement their design
      */
-    let name = UITextField()
-    let email = UITextField()
-    let password = UITextField()
-    let confirmPassword = UITextField()
+    var name = UITextField()
+    var email = UITextField()
+    var password = UITextField()
+    var confirmPassword = UITextField()
     var selectedUniversity: String?
     var selectedMajor: String?
     //***********************************
@@ -63,6 +63,21 @@ class RegisterScreen: UIViewController, UIScrollViewDelegate, UniversityDelegate
     let university = UIButton()
     let major = UIButton()
     let submit = UIButton()
+    
+    
+    // ***** Register Image ****** //
+    let registerImage : UIImageView = {
+       let imageview = UIImageView()
+        imageview.translatesAutoresizingMaskIntoConstraints = false
+        imageview.image = UIImage(named: "registerImage")
+        imageview.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageview.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        return imageview
+    }()
+    
+    
+    
+    
     /*
      Here's what goes down when the view loads
      ScrollViewConfiguration -> Setting up the scrollView and attatching it to the screen
@@ -104,9 +119,9 @@ extension RegisterScreen {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         // each element will have 50 spacing between them
-        stackView.spacing = 50
+        stackView.spacing = 30
         // after we added our scrollview we are adding a stack view that has the same dimensions
         scroll.addSubview(stackView)
         stackView.leadingAnchor.constraint(equalTo: scroll.leadingAnchor).isActive = true;
@@ -131,38 +146,19 @@ extension RegisterScreen: UITextFieldDelegate {
     // we can create a function and pass some parameters
     // that will save some lines of code
     func addTextFields () {
-        textfieldConfiguration(txtField: name, placeholder: "name", secureField: false)
-        textfieldConfiguration(txtField: email, placeholder: "email", secureField: false)
-        textfieldConfiguration(txtField: password, placeholder: "Password", secureField: true)
-        textfieldConfiguration(txtField: confirmPassword, placeholder: "Confirm Password", secureField: true)
+        name = textfieldConfiguration(txtField: name, placeholder: "name", secureField: false, text_color: goldColor, border_color: goldColor)
+        email = textfieldConfiguration(txtField: email, placeholder: "email", secureField: false, text_color: goldColor, border_color: goldColor)
+        password = textfieldConfiguration(txtField: password, placeholder: "Password", secureField: true, text_color: goldColor, border_color: goldColor)
+        confirmPassword = textfieldConfiguration(txtField: confirmPassword, placeholder: "Confirm Password", secureField: true, text_color: goldColor, border_color: goldColor)
+        name.delegate = self
+        email.delegate = self
+        password.delegate = self
+        confirmPassword.delegate = self
     }
-    // Implementation of the texfields design
-    // the function takes textfield and placeholder
-    func textfieldConfiguration (txtField: UITextField, placeholder: String, secureField: Bool) {
-        txtField.autocapitalizationType = .none
-        txtField.autocorrectionType = .no
-        txtField.delegate = self
-        if secureField /* then */ { txtField.isSecureTextEntry = true }
-        // setting translatesAutoresizingMaskIntoConstraints
-        // to false allows us to use constrains
-        txtField.translatesAutoresizingMaskIntoConstraints = false
-        txtField.backgroundColor = .clear
-        // setting the borders to a gold color
-        // the goldColor is implemented in HexColorImplementation.swift file
-        txtField.layer.borderColor = goldColor.cgColor
-        // this will give us a Rounded Rectangle
-        txtField.layer.cornerRadius = 20
-        txtField.textColor = goldColor
-        // setting the clipYoBounds true so it will not go over the borders
-        // we have a clear background so this may not be necessary
-        // however when it comes to password entry the background may chhange to a yellow color which then it goes over the border
-        txtField.clipsToBounds = true
-        txtField.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        txtField.layer.borderWidth = 1
-        txtField.textAlignment = .center
-        // changing the placeholder color to goldColor
-        txtField.attributedPlaceholder = NSAttributedString(string: "\(placeholder)", attributes: [NSAttributedString.Key.foregroundColor: goldColor])
-    }
+
+    
+    
+    
     // this is a predefined function by uikit
     // after the user hits return I want to dismiss the keyboard
     // this function does that exactly
@@ -202,7 +198,7 @@ extension RegisterScreen {
     // one function to rule all the buttons in this view controller
     func buttonConfiguration (button: UIButton, placeholder: String) {
         // rounded rectangle look
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 12
         button.layer.borderColor = goldColor.cgColor
         button.backgroundColor = goldColor
         button.layer.borderWidth = 1
@@ -244,11 +240,11 @@ extension RegisterScreen {
     }
     // TODO: implement
     @objc func universityClicked () {
-        animateButtons(sender: university)
-        // go to the university view
-        let uniScreen = UniversityScreen()
-        uniScreen.delegate = self
-        navigationController?.pushViewController(uniScreen, animated: true)
+         animateButtons(sender: university)
+         // go to the university view
+         let uniScreen = UniversityScreen()
+         uniScreen.delegate = self
+         navigationController?.pushViewController(uniScreen, animated: true)
     }
     
     // TODO: Implement
@@ -269,6 +265,7 @@ extension RegisterScreen {
 extension RegisterScreen {
     func addConstraints () {
         // adding the objects tot the stackview here
+        stackView.addArrangedSubview(registerImage)
         stackView.addArrangedSubview(email)
         stackView.addArrangedSubview(name)
         stackView.addArrangedSubview(password)
@@ -394,11 +391,12 @@ extension RegisterScreen {
  */
 extension RegisterScreen {
     func addUserToFirebase () {
-        let newUser = User(email: email.text!,
-                           name: name.text!,
-                           password: password.text!,
-                           university: university.titleLabel!.text!,
-                           major: major.titleLabel!.text!)
+        let newUser = RegisteringUser(uid: "",
+                                      email: email.text!,
+                                      name: name.text!,
+                                      password: password.text!,
+                                      university: university.titleLabel!.text!,
+                                      major: major.titleLabel!.text!)
         // using the firebase createuser function to add the user
         Auth.auth().createUser(withEmail: newUser.email, password: newUser.password) { (result, err) in
             if err != nil {
@@ -414,13 +412,6 @@ extension RegisterScreen {
                             "password" : newUser.password]
                 let db = Firestore.firestore()
                 db.collection("Users").document(result!.user.uid).setData(userData)
-                /*
-                 db.collection("Users").addDocument(data: userData) { (errorMes) in
-                     if errorMes != nil {
-                         print("\(String(describing: errorMes?.localizedDescription))")
-                     }
-                 }
-                 */
             }
         }
         let successAlert = UIAlertController(title: "SUCCESS", message: "Registration Completed", preferredStyle: .alert)
